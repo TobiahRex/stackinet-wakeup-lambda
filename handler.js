@@ -7,13 +7,13 @@ module.exports.wakeup = (event, context, callback) => {
 
   const wakeupOptions = {
     nj2jp: {
-      endpoint: process.env.NJ2JP_URL,
+      endpoint: process.env.NJ2JP_WAKEUP,
       option: {
         query: 'query{FindProductById(_id: \"Test\") {_id, product { mainTitle title flavor price sku sizes nicotine_strengths routeTag vendor blurb images{ purpose url } dates {added_to_store  removed_from_store }}}}',
       },
     },
     lonesmoke: {
-      endpoint: process.env.LONESMOKE_URL,
+      endpoint: process.env.LONESMOKE_WAKEUP,
       option: {
         userEmail: 'test@test.test',
       },
