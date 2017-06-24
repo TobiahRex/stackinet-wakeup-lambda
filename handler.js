@@ -1,3 +1,5 @@
+if (!global._babelPolyfill) require('babel-polyfill');
+
 import axios from 'axios';
 
 module.exports.wakeup = (event, context, callback) => {
@@ -8,16 +10,15 @@ module.exports.wakeup = (event, context, callback) => {
       endpoint: process.env.NJ2JP_URL,
       option: {
         query: 'query{FindProductById(_id: \"Test\") {_id, product { mainTitle title flavor price sku sizes nicotine_strengths routeTag vendor blurb images{ purpose url } dates {added_to_store  removed_from_store }}}}',
-      }
+      },
     },
     lonesmoke: {
       endpoint: process.env.LONESMOKE_URL,
       option: {
         userEmail: 'test@test.test',
-      }
-    }
+      },
+    },
   };
-
 
   const asyncConcurrentWakeup = async (wakeupObj) => {
     const keys = Object.keys(wakeupObj);
