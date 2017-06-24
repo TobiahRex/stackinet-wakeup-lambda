@@ -4,3 +4,8 @@ jspm_packages
 
 # Serverless directories
 .serverless
+
+# other
+config.yml
+config.json
+_test.js
