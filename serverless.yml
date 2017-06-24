@@ -18,7 +18,7 @@ provider:
         - logs:CreateLogStream
         - logs:PutLogEvents
   environment:
-    NJ2JP_WAKEUP: ${file(./config.yml):nj2jpWakeup}
+    NJ2JP_WAKEUP: ${file(./config.yml):NJ}
     LONESMOKE_WAKEUP: ${file(./config.yml):lonesmokeWakeup}
 
 plugins:
