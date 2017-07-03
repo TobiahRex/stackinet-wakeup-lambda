@@ -15,7 +15,7 @@ module.exports.wakeup = (event, context, callback) => {
     lonesmoke: {
       endpoint: process.env.LONESMOKE_WAKEUP,
       option: {
-        userEmail: 'test@test.test',
+        userEmail: 'wakeup@stackinet.com',
       },
     },
   };
