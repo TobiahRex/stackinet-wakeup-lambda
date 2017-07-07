@@ -1,4 +1,4 @@
-service: stackinet-wakeup
+service: stakinet-wakeup
 
 package:
   exclude:
