@@ -14,9 +14,11 @@ provider:
     - Effect: Allow
       Resource: "*"
       Action:
-        - logs:CreateLogGroup
-        - logs:CreateLogStream
-        - logs:PutLogEvents
+        - "logs:CreateLogGroup"
+        - "logs:CreateLogStream"
+        - "logs:PutLogEvents"
+        - "lambda:InvokeFunction"
+        - "lambda:InvokeAsync"
   environment:
     NJ2JP_WAKEUP: ${file(./config.yml):nj2jpWakeup}
     LONESMOKE_WAKEUP: ${file(./config.yml):lonesmokeWakeup}
