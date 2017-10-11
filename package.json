@@ -4,9 +4,11 @@
   "description": "Calls Stackinet Application Lambdas to keep them \"awake\".",
   "main": "handler.js",
   "dependencies": {
+    "aws-sdk": "^2.131.0",
     "axios": "^0.16.2",
     "babel-polyfill": "^6.23.0",
     "babel-runtime": "^6.23.0",
+    "bluebird": "^3.5.1",
     "debug": "^2.6.8",
     "follow-redirects": "^1.2.4",
     "is-buffer": "^1.1.5",
