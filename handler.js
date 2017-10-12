@@ -1,6 +1,5 @@
 if (!global._babelPolyfill) require('babel-polyfill');
 
-// import axios from 'axios';
 import { Promise as bbPromise } from 'bluebird';
 import AWS from 'aws-sdk';
 
@@ -25,7 +24,6 @@ module.exports.wakeup = (event, context, callback) => {
   const asyncConcurrentWakeup = async (wakeupObj) => {
     const keys = Object.keys(wakeupObj);
 
-    // const callLambda = async (endpoint, payload) => await axios.post(endpoint, options);
     const callLambda = async (functionName, payload) => await bbPromise.fromCallback(cb => lambda.invoke({
        FunctionName: functionName,
        InvocationType: 'RequestResponse',
@@ -40,7 +38,6 @@ module.exports.wakeup = (event, context, callback) => {
       console.error('ERROR: \n', error);
       callback(error);
     });
-    // console.log('results: ', results);
     results.forEach(({ StatusCode }, i) => {
       console.log(`
         REQUEST #${i + 1}:
