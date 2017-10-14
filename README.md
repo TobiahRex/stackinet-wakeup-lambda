@@ -8,3 +8,10 @@ This is the high level architecture of **NJ2JP**, an e-commerce application. Thi
 #### Wake-Up Lambda
 This is the specific architecture of the **wake-up Lambda**. You can see that the wake-up Lambda periodically warms up all other Lambdas.
 ![wake-up Architecture diagram](https://raw.githubusercontent.com/lakshmantgld/stackinet-wakeup-lambda/master/readmeFiles/wakeUpLambda.png)
+
+### Instructions to deploy the Wake-Up Lambda:
+
+1. Duplicate the `config.copy.yml` file and rename it as `config.yml`. Add your function names and make sure you refer those names in the `serverless.yml`.
+2. Once you have added your function names to environment variables, add proper payload to those functions in the `handler.js`.
+3. Deploy the wake-up lambda using `sls deploy` command.
+4. This will deploy the wake-up Lambda and will invoke the lambda at the specified interval of time.
